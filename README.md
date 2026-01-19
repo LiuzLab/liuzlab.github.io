@@ -106,7 +106,141 @@
 
 ---
 
-## 🛠️ Quick Start
+## 🛠️ Running Locally
+
+### Prerequisites
+*   Node.js v22.12.0 or higher
+
+### 1. Clone the Repository
+```bash
+git clone https://github.com/LiuzLab/Liuzlab.github.io.git
+cd Liuzlab.github.io
+```
+
+### 2. Install Dependencies
+```bash
+npm install
+```
+
+### 3. Start Development Server
+Start the local server with hot module replacement:
+```bash
+npm run dev
+```
+Visit `http://localhost:4321` in your browser to see the site.
+
+### 4. Build for Production (Optional)
+Generate the static site and search index:
+```bash
+npm run build
+```
+*Note: The search index is generated at build time. Search functionality requires the build step.*
+
+---
+
+## 👥 Adding Yourself to the Team Page
+
+Follow these steps to add yourself as a team member:
+
+### Step 1: Fork the Repository
+1. Go to [https://github.com/LiuzLab/Liuzlab.github.io](https://github.com/LiuzLab/Liuzlab.github.io)
+2. Click the **"Fork"** button in the top-right corner
+3. This creates a copy of the repository in your GitHub account
+
+### Step 2: Clone Your Fork
+```bash
+git clone https://github.com/YOUR-USERNAME/Liuzlab.github.io.git
+cd Liuzlab.github.io
+npm install
+```
+
+### Step 3: Add Your Profile Picture
+1. Prepare a square (1:1 aspect ratio) photo of yourself in `.jpg`, `.png`, or `.webp` format
+2. Name it something descriptive (e.g., `avatar-yourname.jpg`)
+3. Place it in the `src/assets/` directory
+
+### Step 4: Create Your Team Member File
+1. Create a new Markdown file in `src/content/team/` directory
+2. Name it descriptively (e.g., `phd-jane-smith.md` or `postdoc-john-doe.md`)
+3. Use the following template:
+
+```markdown
+---
+name: "Your Full Name"
+role: "Your Role"
+title: ["Your Title"]
+avatar: "../../assets/avatar-yourname.jpg"
+bio: "Brief one-line description of your research interests."
+email: "your.email@institution.edu"
+website: "https://your-website.com"
+linkedin: "https://linkedin.com/in/yourprofile"
+github: "https://github.com/yourusername"
+twitter: "https://twitter.com/yourhandle"
+googleScholar: "https://scholar.google.com/citations?user=YOUR_ID"
+weight: 50
+---
+
+Write a longer bio here (optional). This appears on your detailed profile page.
+Include information about your research, background, education, and interests.
+```
+
+**Required Fields:**
+- `name`: Your full name
+- `role`: Must be one of: `Principal Investigator`, `Professor`, `Associate Professor`, `Assistant Professor`, `Postdoc`, `Research Assistant`, `PhD Student`, `Master Student`, `Undergraduate`, `Alumni`
+- `avatar`: Path to your image in `src/assets/` (use format: `../../assets/your-image.jpg`)
+
+**Optional Fields:**
+- `title`: Array of additional titles (e.g., `["PhD Student", "Research Fellow"]`)
+- `bio`: Short description for your card
+- `email`, `website`, `linkedin`, `github`, `twitter`, `googleScholar`: Your social/academic links
+- `weight`: Controls display order (lower numbers appear first, default is 100)
+
+**Example:**
+```markdown
+---
+name: "Jane Smith"
+role: "PhD Student"
+title: ["PhD Student"]
+avatar: "../../assets/avatar-jane.jpg"
+bio: "Researching deep learning applications in computational biology."
+email: "jane.smith@bcm.edu"
+github: "https://github.com/janesmith"
+googleScholar: "https://scholar.google.com/citations?user=EXAMPLE"
+weight: 25
+---
+
+Jane is a third-year PhD student in the Liu Lab working on developing 
+machine learning models for disease gene prioritization. She holds a 
+B.S. in Computer Science from MIT.
+```
+
+### Step 5: Test Your Changes Locally
+```bash
+npm run dev
+```
+Visit `http://localhost:4321/team` to verify your profile appears correctly.
+
+### Step 6: Commit and Push Your Changes
+```bash
+git add src/content/team/your-file.md
+git add src/assets/avatar-yourname.jpg
+git commit -m "Add [Your Name] to team page"
+git push origin main
+```
+
+### Step 7: Create a Pull Request
+1. Go to your fork on GitHub: `https://github.com/YOUR-USERNAME/Liuzlab.github.io`
+2. Click **"Contribute"** → **"Open pull request"**
+3. Add a title: "Add [Your Name] to team page"
+4. Add a description explaining your changes
+5. Click **"Create pull request"**
+
+### Step 8: Done!
+Once your pull request is reviewed and merged, your profile will appear on the team page!
+
+---
+
+## 🛠️ Quick Start (Alternative: Template Usage)
 
 ### Prerequisites
 *   Node.js v22.12.0 or higher
